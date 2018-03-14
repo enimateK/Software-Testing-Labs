@@ -1,14 +1,5 @@
-# Préparation
-Tout d’abord, vous allez copier le code source de ce projet qui se trouve sur GitLab de l'Université, sur le dépôt suivant:
-[tp-test-statique](https://gitlab.univ-nantes.fr/sunye-g/tp-test-statique).
-Il s’agit d’un projet de développement Java que vous allez utiliser dans la suite de ce TP.
 
-Clonez ce projet pour commencer:
-
-    git clone https://gitlab.univ-nantes.fr/sunye-g/tp-test-statique.git
-
-Vous pouvez ouvrir directement ce projet dans NetBeans ou dans IntelliJ. Ou l’importer dans Eclipse. 
-Si vous ne souhaitez pas utiliser un IDE, vous pouvez aussi utiliser la ligne de commande.
+# Test statique
 
 ## Compilation et tests
 Avant d’analyser le code source du projet, assurez-vous qu’il compile correctement et qu’il passe tous les tests
