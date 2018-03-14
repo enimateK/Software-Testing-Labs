@@ -1,27 +1,5 @@
 # TP Test fonctionnel
 
-## Préparation
-
-Tout d'abord, vous allez copier le code source de ce projet qui se trouve sur le GitLab de l'Université.
-Il s'agit d'un projet de développement Java que vous allez utiliser dans la suite de ce TP.
-
-```shell
-git clone https://gitlab.univ-nantes.fr/sunye-g/tp-test-fonctionnel.git
-```
-Vous pouvez ouvrir directement ce projet dans NetBeans ou dans IntelliJ. Ou l'importer dans Eclipse.
-Si vous ne souhaitez pas utiliser un IDE, vous pouvez aussi utiliser Maven directement en ligne de commande.
-
-```shell
-cd tp-test-fonctionnel
-mvn initialize
-mvn test
-```
-Cela peut nécessiter que vous ajoutiez:
-
-```shell
-export M2_HOME=/usr/local/opt/maven/
-```
-
 ## Test fonctionnel
 
 
