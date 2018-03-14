@@ -21,7 +21,7 @@ Before opening the project, you can initialize and build it from the command lin
 
 ```shell
 cd software-testing-labs
-mvn initialize
+./scripts/initialize.sh
 mvn package
 ```
 
