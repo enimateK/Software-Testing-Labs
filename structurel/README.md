@@ -1,27 +1,5 @@
 # TP Test structurel
 
-## Préparation
-
-Tout d'abord, vous allez copier le code source de ce projet qui se trouve sur le GitLab de l'Uni
-versité.
-Il s'agit d'un projet de développement Java que vous allez utiliser dans la suite de ce TP.
-Comme ce dépôt contient des sous-modules, la copie est plus complexe:
-
-```shell
-git clone https://gitlab.univ-nantes.fr/sunye-g/tp-test-structurel.git
-git submodule init
-git submodule update --remote
-```
-
-Le projet se trouve dans le répertoire `code`.  Vous pouvez ouvrir directement ce projet dans NetBeans ou dans IntelliJ. Ou l'importer dans Eclipse.
-
-Si vous ne souhaitez pas utiliser un IDE, vous pouvez aussi utiliser Maven directement en ligne de commande:
-
-```shell
-cd tp-test-structurel/code
-mvn test 
-```
-
 ## Test structurel
 
 Utilisez les techniques de test structurel pour tester la classe `AlarmClock` et   

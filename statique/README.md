@@ -6,7 +6,7 @@ Avant d’analyser le code source du projet, assurez-vous qu’il compile correc
 écrits par son auteur. 
 Pour cela, utilisez Maven, à partir de la ligne de commandes:
 
-    cd tp-test-statique
+    cd statique
     mvn compile
 
 Le projet doit compiler correctement, mais ne réussira pas tous les tests unitaires.

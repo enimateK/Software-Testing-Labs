@@ -22,6 +22,7 @@
         <module>fonctionnel</module>
         <module>structurel</module>
         <module>statique</module>
+        <module>instrumentation</module>
     </modules>
 
     <build>
