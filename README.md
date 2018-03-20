@@ -38,6 +38,7 @@ During the labs, you will use 3 different tools: Apache Maven, JUnit and Intelli
 
 ## Labs
 
+1. [JUnit](junit/).
 1. [Test statique](statique/).
 1. [Test fonctionnel](fonctionnel/).
 2. [Test structurel](structurel/).

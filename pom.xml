@@ -23,6 +23,7 @@
         <module>structurel</module>
         <module>statique</module>
         <module>instrumentation</module>
+        <module>junit</module>
     </modules>
 
     <build>
