@@ -16,13 +16,12 @@ git clone https://gitlab.univ-nantes.fr/sunye-g/software-testing-labs.git
 ### Initializing and building the project
 
 You can open this project directly from NetBeans or from IntelliJ or import it from Eclipse.
-Before opening the project, you can initialize and build it from the command line:
+Before opening the project, you must initialize it from the command line:
 
 
 ```shell
 cd software-testing-labs
 ./scripts/initialize.sh
-mvn package
 ```
 
 The initialization is very important for the continuation: it will install several needed artifacts.
@@ -43,5 +42,5 @@ During the labs, you will use 3 different tools: Apache Maven, JUnit and Intelli
 1. [Test fonctionnel](fonctionnel/).
 2. [Test structurel](structurel/).
 2. [Instrumentation](instrumentation/).
-3. [Mutation Analysis](mutation/).
+3. [Analyse de Mutation](mutation/).
 
