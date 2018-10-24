@@ -19,31 +19,32 @@ Dans la ligne de commandes, exécutez la commande suivante:
      mvn pmd:pmd -DtargetJdk=1.7
 
 Lorsqu’il est exécuté sans aucune configuration, PMD applique quelques règles de base et génère un rapport dans
-le format html. Ce rapport est placé dans à l’intérieur du projet, dans le dossier target/site/pmd.html
+le format html. Ce rapport est placé dans à l’intérieur du projet, dans le dossier `target/site/pmd.html`
 
 ## Directives de sécurité
-Vous allez maintenant configurer PMD pour qu’il vérifie que le code source respecte les directives de sécu-
-rité publiées par Sun. Ces directives sont disponibles sur l’adresse suivante: 
+Vous allez maintenant configurer PMD pour qu’il vérifie que le code source respecte les directives de sécurité publiées par Sun. Ces directives sont disponibles sur l’adresse suivante: 
 [http://www.oracle.com/technetwork/java/seccodeguide-139067.html](http://www.oracle.com/technetwork/java/seccodeguide-139067.html).
-La configuration de PMD, ou plus précisément du plug-in Maven qui gère PMD, se fait dans le fichier pom.xml. PMD n’est utilise qu’à la fin du cycle de construction du projet, pendant l’étape de génération des rapports du projet.  Éditez le fichier pom.xml pour y ajouter la configuration du plug-in PMD, qui est présentée ci-dessous:
+La configuration de PMD, ou plus précisément du plug-in Maven qui gère PMD, se fait dans le fichier pom.xml.
+PMD n’est utilise qu’à la fin du cycle de construction du projet, pendant l’étape de génération des rapports du projet.
+Modifiez le fichier `pom.xml` pour y ajouter la configuration du plug-in PMD, qui est présentée ci-dessous:
 
 ```xml
 <project>
 	<reporting>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.6</version>
-				<configuration>
-					<sourceEncoding>utf-8</sourceEncoding>
-					<minimumTokens>100</minimumTokens>
-					<targetJdk>1.7</targetJdk>
-					<rulesets>
-						<ruleset>/rulesets/java/sunsecure.xml</ruleset>
-					</rulesets>
-				</configuration>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.8</version>
+                <configuration>
+                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                    <minimumTokens>100</minimumTokens>
+                    <targetJdk>${maven.compiler.target}</targetJdk>
+                    <rulesets>
+                        <ruleset>/rulesets/java/sunsecure.xml</ruleset>
+                    </rulesets>
+                </configuration>
+            </plugin>
 		</plugins>
 	</reporting>
 </project>
@@ -65,8 +66,8 @@ Pour ajouter la vérification des règles de nommage à PMD, vous devez modifier
 
 ```xml
 <rulesets>
-	<ruleset>/rulesets/java/sunsecure.xml</ruleset>
-	<ruleset>/rulesets/java/naming.xml</ruleset>
+  <ruleset>/rulesets/java/sunsecure.xml</ruleset>
+  <ruleset>/rulesets/java/naming.xml</ruleset>
 </rulesets>
 ```
 
@@ -86,7 +87,7 @@ Après cette modification, régénérez le rapport de PMD et corrigez les probl�
 PMD permet de facilement ajouter de nouvelles règles. 
 Les nouvelles règles doivent hériter de la classe `net.sourceforge.pmd.lang.java.rule.AbstractJavaRule` et redéfinir une ou plusieurs méthodes `visit(ASTStatement node, Object data)`. De plus, tous les objets `node` implémentent l'interface `net.sourceforge.pmd.lang.ast.Node`. Celle-ci  fournit des méthodes utiles pour écrire les règles.  Enfin, les règles doivent être décrites dans un ruleSet. 
 
-Un tutoriel se trouve à l’adresse suivante: [http://pmd.sourceforge.net/pmd-5.0.5/howtowritearule.html](http://pmd.sourceforge.net/pmd-5.0.5/howtowritearule.html). 
+Un tutoriel se trouve à l’adresse suivante: [https://pmd.github.io/pmd-6.8.0/pmd_userdocs_extending_writing_pmd_rules.html](https://pmd.github.io/pmd-6.8.0/pmd_userdocs_extending_writing_pmd_rules.html).
 
 ## Exemple de règle "chaque while doit avoir des accolades"
 
