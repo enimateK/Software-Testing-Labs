@@ -24,6 +24,7 @@
         <module>statique</module>
         <module>instrumentation</module>
         <module>junit</module>
+        <module>testabilite</module>
     </modules>
 
     <build>

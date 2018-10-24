@@ -10,7 +10,7 @@ mv AlarmClock-master* AlarmClock
 #cp -R ../AlarmClock .
 cd AlarmClock
 mvn clean site install
-cp -R src/main ../fonctionnel/src/
+cp -R src/* ../structurel/src/
 cp -R target/site/apidocs ../fonctionnel/
 cd ..
 rm -rf AlarmClock
