@@ -11,6 +11,7 @@ mv AlarmClock-master* AlarmClock
 cd AlarmClock
 mvn clean site install
 cp -R src/* ../structurel/src/
+cp -R src/main/java/* ../testabilite/src/main/java/
 cp -R target/site/apidocs ../fonctionnel/
 cd ..
 rm -rf AlarmClock
