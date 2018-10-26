@@ -6,7 +6,7 @@
     xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
     <rule name="WhileLoopsMustUseBracesRule"
           message="Avoid using 'while' statements without curly braces"
-          class="vv.tp3.WhileLoopsMustUseBracesRule">
+          class="fr.univnantes.pmd.rules.WhileLoopsMustUseBracesRule">
       <description>
       Avoid using 'while' statements without using curly braces
       </description>
