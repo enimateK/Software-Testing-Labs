@@ -9,7 +9,7 @@ Pour cela, utilisez Maven, à partir de la ligne de commandes:
     cd statique
     mvn compile
 
-Le projet doit compiler correctement, mais ne réussira pas tous les tests unitaires.
+Le projet doit compiler correctement et réussira tous les tests unitaires.
 
 # Premiers pas avec PMD
 Pour commencer l’analyse du code source, vous allez utiliser l’outil PMD directement à partir de Maven, qui se
