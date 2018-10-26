@@ -2,24 +2,14 @@ package fr.univnantes.cta;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-import fr.univnantes.cta.CompassDirection;
 import fr.univnantes.cta.impl.CoordinateImpl;
+import org.junit.jupiter.api.Test;
 
 
 public class TestCoordinate {
 	private CoordinateImpl coord;
 	
-	@Before
-	public void setUp() throws Exception {
-	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
 
 
 	@Test

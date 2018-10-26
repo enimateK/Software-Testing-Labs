@@ -2,24 +2,15 @@ package fr.univnantes.cta;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.*;
 
 import fr.univnantes.cta.impl.AngleImpl;
+import org.junit.jupiter.api.Test;
 
 
 public class TestAngle {
 	private AngleImpl angleImpl;
 
-	@Before
-	public void setUp() throws Exception {
-	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
 
 	@Test
 	public void testAnglePositiveValue() {

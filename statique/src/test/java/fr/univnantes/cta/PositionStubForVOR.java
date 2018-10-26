@@ -1,7 +1,5 @@
 package fr.univnantes.cta;
 
-import fr.univnantes.cta.CompassDirection;
-import fr.univnantes.cta.Position;
 import fr.univnantes.cta.impl.LatitudeImpl;
 import fr.univnantes.cta.impl.LongitudeImpl;
 import fr.univnantes.cta.impl.PositionImpl;
