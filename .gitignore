@@ -2,3 +2,6 @@
 target/
 .idea/
 *.versionsBackup
+.classpath
+.project
+.settings
