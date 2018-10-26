@@ -1,5 +1,6 @@
 package vv.spoon;
 
+import spoon.Launcher;
 import spoon.MavenLauncher;
 import vv.spoon.processor.LogProcessor;
 
@@ -15,12 +16,12 @@ public class Main {
 
         File projectToInstrument = new File(args[0]);
 
-        MavenLauncher mavenLauncher = new MavenLauncher(projectToInstrument.getAbsolutePath(), MavenLauncher.SOURCE_TYPE.ALL_SOURCE);
-        mavenLauncher.addProcessor(new LogProcessor());
-        mavenLauncher.setSourceOutputDirectory(new File(projectToInstrument, "spoonedSources"));
-        mavenLauncher.setBinaryOutputDirectory(new File(projectToInstrument, "spoonedBinaries"));
+        Launcher launcher = new MavenLauncher(projectToInstrument.getAbsolutePath(), MavenLauncher.SOURCE_TYPE.ALL_SOURCE);
+        launcher.addProcessor(new LogProcessor());
+        launcher.setSourceOutputDirectory(new File(projectToInstrument, "spoonedSources"));
+        launcher.setBinaryOutputDirectory(new File(projectToInstrument, "spoonedBinaries"));
 
-        mavenLauncher.getEnvironment().setShouldCompile(true);
-        mavenLauncher.run();
+        launcher.getEnvironment().setShouldCompile(true);
+        launcher.run();
     }
 }

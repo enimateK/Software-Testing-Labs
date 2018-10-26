@@ -24,28 +24,29 @@ Spoon peut-être utilisé sous la forme d'une dépendence Maven, simplement en a
 La classe principale de Spoon, `Launcher`, est initialisée de cette manière:
 
 ```java
-File projectToInstrument = new File("src/main/resources/example);
+File projectToInstrument = new File("src/main/resources/example");
 
-MavenLauncher mavenLauncher = new MavenLauncher(projectToInstrument.getAbsolutePath(), MavenLauncher.SOURCE_TYPE.ALL_SOURCE);
+Launcher launcher = new MavenLauncher(projectToInstrument.getAbsolutePath(), MavenLauncher.SOURCE_TYPE.ALL_SOURCE);
 
-mavenLauncher.addProcessor(new LogProcessor());
-mavenLauncher.setSourceOutputDirectory(new File(projectToInstrument, "spoonedSources"));
-mavenLauncher.setBinaryOutputDirectory(new File(projectToInstrument, "spoonedBinaries"));
+launcher.addProcessor(new LogProcessor());
+launcher.setSourceOutputDirectory(new File(projectToInstrument, "spoonedSources"));
+launcher.setBinaryOutputDirectory(new File(projectToInstrument, "spoonedBinaries"));
 
-mavenLauncher.getEnvironment().setShouldCompile(true);
-
-mavenLauncher.run();
+launcher.getEnvironment().setShouldCompile(true);
+launcher.run();
 ```
 
 En executant la méthode `run()` du `Launcher`, le code source sera réécrit en fonction des processeurs dans le dossier `spoonedSources`, et ce code instrumenté sera compilé dans le dossier `spoonedBinaries`.
 
-L'utilisation de la classe `MavenLauncher` à la place du `Launcher` standard permet à Spoon de gérer automatiquement le classpath lors de la compilation, allégeant l'instrumentation, mais ne fonctionnant *que* sur des projets Maven.
+L'utilisation de la classe `MavenLauncher` à la place du `Launcher` standard permet à Spoon de gérer automatiquement le classpath lors de la compilation, allégeant l'instrumentation en analysant le `pom.xml`.
 
-Le programme donné doit être compilé afin d'être utilisé. Lancer la commande `mvn package` produira le jar `instrumentation-1.0-jar-with-dependencies.jar`, qui pourra être exécuté, en passant en paramètre le programme à instrumenter. Example:
+Le programme donné doit être compilé afin d'être utilisé. Lancer la commande `mvn package` produira le jar `target/instrumentation-1.0-jar-with-dependencies.jar`, qui pourra être exécuté, en passant en paramètre le programme à instrumenter. Example:
 
 ```shell
 java -jar instrumentation-1.0-jar-with-dependencies.jar src/main/resources/example
 ```
+
+Cette commande instrumentera le projet *example*, en écrivant le code source modifié et les classes compilées dans les répertoires `spoonedSources` et `spoonedBinaries`.
 
 ### Utilisation des processeurs
 
