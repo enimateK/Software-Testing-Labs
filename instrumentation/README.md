@@ -14,9 +14,9 @@ Spoon peut-être utilisé sous la forme d'une dépendence Maven, simplement en a
 
 ```xml
 <dependency>
-	<groupId>fr.inria.gforge.spoon</groupId>
-	<artifactId>spoon-core</artifactId>
-	<version>7.1.0</version>
+  <groupId>fr.inria.gforge.spoon</groupId>
+  <artifactId>spoon-core</artifactId>
+  <version>7.1.0</version>
 </dependency>
 
 ```
