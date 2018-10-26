@@ -72,6 +72,6 @@ public class CTAFactoryImpl implements CTAFactory {
     }
 
     public void setAirplanes(Airplane[] array) {
-        airplanes = Arrays.copyOf(array,array.length);
+        airplanes = array;
     }
 }
