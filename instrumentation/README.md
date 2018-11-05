@@ -37,7 +37,7 @@ java.lang.System.out.println("Hello!");
 sera remplacé par:
 
 ```java
-vv.spoon.logger.LogWriter.out("Hello!", false);
+LogWriter.out("Hello!", false);
 ```
 
 Les processeurs sont des applications du patron de conception **Visitor**, qui traversent l'AST et appelent des méthodes
@@ -89,7 +89,7 @@ Ensuite, la méthode `process()` commente l'appel de `println()` et ajoute un ap
         ctStatementList.addStatement(getFactory().Code().createCodeSnippetStatement("*/")); //Close comment after System.out.print
         
         //Add the logger after the System.out.print
-        ctStatementList.addStatement(getFactory().Code().createCodeSnippetStatement("vv.spoon.logger.LogWriter.out("+ctInvocation.getArguments().get(0).toString()+", "+isError(ctInvocation)+")"));
+        ctStatementList.addStatement(getFactory().Code().createCodeSnippetStatement("LogWriter.out("+ctInvocation.getArguments().get(0).toString()+", "+isError(ctInvocation)+")"));
         ctInvocation.insertAfter(ctStatementList);
     }
 ```
@@ -135,7 +135,7 @@ répertoires `spoonedSources` et `spoonedBinaries`.
 
 ### Exécution du programme transformé
 
-Le  processor  `LogProcessor` remplace tous les appels de `System.out.println(String)` par un appel au logger `LogProcessor` qui redirige toutes les sorties console vers un fichier log. Ainsi, au lieu d'avoir `System.out.println("Hello, world!");` le fichier instrumenté contiendra `vv.spoon.logger.LogWriter.out("Hello, world!", false);`
+Le  processor  `LogProcessor` remplace tous les appels de `System.out.println(String)` par un appel au logger `LogProcessor` qui redirige toutes les sorties console vers un fichier log. Ainsi, au lieu d'avoir `System.out.println("Hello, world!");` le fichier instrumenté contiendra `LogWriter.out("Hello, world!", false);`
 Le Listing 1 montre la classe `C` du projet *example* une fois instrumentée.
 
 Puisque qu'un appel à une classe exterieure au programme a été ajouté (`LogWriter`), il est nécessaire de l'ajouter au classpath lors de l'execution.
@@ -155,7 +155,7 @@ public class C  {
         /*;
         java.lang.System.out.println("C.C(int i)");
         */;
-        vv.spoon.logger.LogWriter.out("C.C(int i)", false);
+        LogWriter.out("C.C(int i)", false);
         this.i = i;
     }
 
@@ -163,7 +163,7 @@ public class C  {
         /*;
         java.lang.System.out.println("C.mth1()");
         */;
-        vv.spoon.logger.LogWriter.out("C.mth1()", false);
+        LogWriter.out("C.mth1()", false);
         return 100 / (i);
     }
 }

@@ -32,7 +32,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>vv.spoon.Main</mainClass>
+                            <mainClass>fr.nantes.instrumentation.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
