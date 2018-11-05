@@ -215,6 +215,11 @@
                 <artifactId>pmd-java</artifactId>
                 <version>6.8.0</version>
             </dependency>
+            <dependency>
+                <groupId>fr.inria.gforge.spoon</groupId>
+                <artifactId>spoon-core</artifactId>
+                <version>7.1.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
