@@ -34,7 +34,7 @@ En Java, on peut qualifier le plus grand et le plus petit entier par `Integer.MA
 
 3.	Répétez la procédure précédente pour créer des cas de test fonctionnels pour les méthodes de l'interface `AlarmClock` :
 -	`selectRing(int ringtone)`
--	`activate()`
+-	`enable()`
 -	`addMin(int minutes)`
 -	`switchOff(boolean snooze)`
 
@@ -50,7 +50,7 @@ En Java, on peut qualifier le plus grand et le plus petit entier par `Integer.MA
     1. `AlarmClockFactory::createAlarmClock()`,
     2. `selectRing()`,
     3. `addMin()`,
-    4. `activate()`,
+    4. `enable()`,
     5. `switchOf()`.
 
 ## Observations
@@ -60,6 +60,6 @@ Vous devriez avoir des difficultés pour les 2 dernières méthodes qui seront �
 
 ## Amélioration des tests
 
-Utilisez les tests paramétrés pour réduire le nombre de tests unitaires: [Parameterized tests](https://github.com/junit-team/junit4/wiki/Parameterized-tests).
+Utilisez les tests paramétrés pour réduire le nombre de tests unitaires: [Tests paramétrés en JUnit 5](https://sunye.github.io/java/junit/2017/11/29/test-parametres-junit.html).
 
 Remplacez les assertions Java (ou JUnit) de vos tests par des assertions [AssertJ](http://joel-costigliola.github.io/assertj/index.html).

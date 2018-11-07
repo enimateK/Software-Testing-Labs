@@ -1,4 +1,4 @@
-package vv.spoon.logger;
+package fr.nantes.instrumentation.logger;
 
 public class ShutdownHookLog extends Thread {
 

@@ -44,7 +44,6 @@ Modifiez le fichier `pom.xml` pour y ajouter la configuration du plug-in PMD, qu
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.8</version>
                 <configuration>
                     <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                     <minimumTokens>100</minimumTokens>
@@ -79,6 +78,7 @@ Pour ajouter la vérification des règles de nommage à PMD, vous devez modifier
 <rulesets>
   <ruleset>/rulesets/java/sunsecure.xml</ruleset>
   <ruleset>/rulesets/java/naming.xml</ruleset>
+  <ruleset>/rulesets/java/codesize.xml</ruleset>
 </rulesets>
 ```
 

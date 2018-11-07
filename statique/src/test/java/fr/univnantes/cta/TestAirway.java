@@ -1,23 +1,20 @@
 package fr.univnantes.cta;
 
-import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 
 import fr.univnantes.cta.impl.AirwayImpl;
 import fr.univnantes.cta.impl.VORImpl;
-
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class TestAirway {
 	private AirwayImpl airwayImpl;
 	
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() throws Exception {
 	}
 

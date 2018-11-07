@@ -1,4 +1,4 @@
-package vv.spoon.logger;
+package fr.nantes.instrumentation.logger;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;

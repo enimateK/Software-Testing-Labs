@@ -1,4 +1,4 @@
-package vv.spoon.processor;
+package fr.nantes.instrumentation.processor;
 
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtInvocation;
@@ -46,7 +46,7 @@ public class LogProcessor extends AbstractProcessor<CtInvocation> {
         ctStatementList.addStatement(getFactory().Code().createCodeSnippetStatement("*/")); //Close comment after System.out.print
 
         //Add the logger after the System.out.print
-        ctStatementList.addStatement(getFactory().Code().createCodeSnippetStatement("vv.spoon.logger.LogWriter.out("+ctInvocation.getArguments().get(0).toString()+", "+isError(ctInvocation)+")"));
+        ctStatementList.addStatement(getFactory().Code().createCodeSnippetStatement("LogWriter.out("+ctInvocation.getArguments().get(0).toString()+", "+isError(ctInvocation)+")"));
 
         ctInvocation.insertAfter(ctStatementList);
     }

@@ -1,8 +1,8 @@
-package vv.spoon;
+package fr.nantes.instrumentation;
 
 import spoon.Launcher;
 import spoon.MavenLauncher;
-import vv.spoon.processor.LogProcessor;
+import fr.nantes.instrumentation.processor.LogProcessor;
 
 import java.io.File;
 

@@ -9,7 +9,7 @@ Pour que Maven puisse les retrouver, placez vos classes de test dans le réperto
 Vous devez tester:
 
 1. le comportement nominal du constructeur.
-2. lle comportement extra-nominal du constructeur.
+2. le comportement extra-nominal du constructeur.
 3. les autres méthodes de la classe `AlarmClock` .
 
 Considérez la classe java `AlarmClock`:
@@ -27,22 +27,16 @@ Considérez la classe java `AlarmClock`:
 -  Suivez la démarche précédente afin de déterminer des cas de test pour les autres méthodes de la classe `AlarmClock`:
   - `AlarmClock(ring,hour,min)`
   - `addMin(addedMin)`
-  - `setActive(active)`
+  - `enable()`
 
 
 ## Couverture de code
 
-Vérifiez l'efficacité de vos données de test grâce à l'outil [Cobertura](http://cobertura.sourceforge.net/), 
-utilisable directement avec Maven:
-
-```shell
-mvn cobertura:cobertura
-```
-
-Ou alors, générez directement tous les rapports de développement du projet:
+Vérifiez l'efficacité de vos données de test grâce à l'outil [JaCoCo](https://www.jacoco.org),
+en générant directement tous les rapports de développement du projet:
 
 ```shell
 mvn site
 ```
 
-Dans les deux cas, vous trouverez les résultats à l'intérieur du répertoire `target` du projet.
+Vous trouverez les résultats à l'intérieur du répertoire `target` du projet.
