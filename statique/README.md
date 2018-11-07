@@ -117,7 +117,7 @@ dans `custompmdrules`.
 ## Ajout d'une règle "chaque while doit avoir des accolades"
 
 En premier lieu, nous allons voir comment configurer PMD pour utiliser une règle déjà 
-codée dans le proket `custompmdrules`, et déjà déclairée dans une *ruleSet*.
+codée dans le proket `custompmdrules`, et déjà déclarée dans une *ruleSet*.
 
 On considère une règle autorisant uniquement les boucles while faisant usage d'accolades. 
 La classe définissant cette règle et le fichier XML de configuration du ruleSet contenant cette règle sont présentés ci-après.
@@ -241,4 +241,7 @@ Notez que :
 les ajouter au fichier xml contenant le `ruleSet`.
 - Le projet fourni ne contient pas de code qui enfreint ces règles, vous devrez donc 
   ajouter du code artificiel au sein du projet `statique` pour tester vos règles. 
+- N'hésitez pas à vous aider de la documentation officielle PMD, bien qu'elle ne fasse 
+  pas usage de maven dans ses exemples :  [https://pmd.github.io/pmd-6.8.0/pmd_userdocs_extending_writing_pmd_rules.html](https://pmd.github.io/pmd-6.8.0/pmd_userdocs_extending_writing_pmd_rules.html).
+  
 
