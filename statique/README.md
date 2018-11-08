@@ -94,7 +94,7 @@ Si vous utilisez Eclipse, pensez à utiliser le menu **Refactor** pour renommer 
 
 ## Autres règles
 
-Modifiez la configuration du plug-in PMD pour que les règles suivantes soient prises en compte: "braces" et "unusedcode".
+Modifiez la configuration du plug-in PMD pour que la règle suivante soit prise en compte: "unusedcode".
 
 Après cette modification, régénérez le rapport de PMD et corrigez les problèmes retrouvés. 
 
