@@ -61,7 +61,7 @@ Modifiez le fichier `pom.xml` pour y ajouter la configuration du plug-in PMD, qu
 
 Vous trouverez une description plus précise de la configuration sur le site de la fondation [Apache](http://maven.apache.org/plugins/maven-pmd-plugin/).
 
-Comme précédement, vous pouvez appeler pmd avec la commande suivante :
+Comme précédemment, vous pouvez appeler pmd avec la commande suivante :
 
     mvn pmd:pmd -DtargetJdk=1.7
 
@@ -117,7 +117,7 @@ dans `custompmdrules`.
 ## Ajout d'une règle "chaque while doit avoir des accolades"
 
 En premier lieu, nous allons voir comment configurer PMD pour utiliser une règle déjà 
-codée dans le proket `custompmdrules`, et déjà déclarée dans une *ruleSet*.
+codée dans le projet `custompmdrules`, et déjà déclarée dans une *ruleSet*.
 
 On considère une règle autorisant uniquement les boucles while faisant usage d'accolades. 
 La classe définissant cette règle et le fichier XML de configuration du ruleSet contenant cette règle sont présentés ci-après.
