@@ -247,17 +247,17 @@ Designer" qui permet de facilement visualiser l'AST d'un morceau de code Java.
 Cet outil n'est pas accessible via maven, et nécessite donc de télécharger PMD de manière 
 standalone.
 
-Pour télécharger pmd :
-```bash
-$ wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F6.9.0/pmd-bin-6.9.0.zip
-$ unzip pmd-bin-6.9.0.zip
-```
+Pour télécharger PMD standalone, se rendre sur https://github.com/pmd/pmd/releases et télécharger l'archive 
+`bin` de la la dernière release. Puis dézippez le fichier dans le répertoire de votre choix, 
+et rendez vous dans le répertoire.
 
-Pour lancer "PMD Rule Designer":
+Pour lancer "PMD Rule Designer" sous Linux, ouvrez un terminal dans le répertoire et 
+faites :
 ```bash
-$ cd pmd-bin-6.9.0
 $ ./bin/run.sh designer
 ```
+
+Pour lancer "PMD Rule Designer" sous Windows, lancez le fichier `bin\designer.bat`.
 
 Cela vous présente la fenêtre suivante, dans laquelle vous pouvez écrire du Java valide 
 au centre, et voir dans le volet droit l'AST correspondant.
