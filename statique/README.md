@@ -232,13 +232,37 @@ Puis exécutez PMD à nouveau, et constatez et corrigez la nouvelle erreur que c
 
 ## Écriture de nouvelles règles
 
-Écrivez les trois règles suivantes :
+Vous devez écrire les trois règles suivantes :
 
 1. Une violation est levée dès que deux boucles `for` sont imbriquées.
 2. Une violation est levée pour chaque `while(true)` ou `while(false)`.
 3. Raffinez la règle précédente en prenant en compte les possibilités d’échappement `break` ou `return`) dans la boucle `while`.
 
-Notez que :
+Pour vous aidez, il est fortement recommandé d'utiliser l'outil graphique "PMD Rule 
+Designer" qui permet de facilement visualiser l'AST d'un morceau de code Java.
+Cet outil n'est pas accessible via maven, et nécessite donc de télécharger PMD de manière 
+standalone.
+
+Pour télécharger pmd :
+```bash
+$ wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F6.9.0/pmd-bin-6.9.0.zip
+$ unzip pmd-bin-6.9.0.zip
+```
+
+Pour lancer "PMD Rule Designer":
+```bash
+$ cd pmd-bin-6.9.0
+$ ./bin/run.sh designer
+```
+
+Cela vous présente la fenêtre suivante, dans laquelle vous pouvez écrire du Java valide 
+au centre, et voir dans le volet droit l'AST correspondant.
+Vous pouvez ainsi voir quels *nodes* PMD il faudra visiter pour lever des erreurs dans votre 
+analyseur.
+
+![](img/pmd-rule-designer.png)
+
+Enfin, notez que :
 - Il faudra prendre soin à écrire ces règles au sein du projet `custompmdrules`, et à 
 les ajouter au fichier xml définissant le `ruleSet`.
 - Le projet fourni ne contient pas de code qui enfreint ces règles, vous devrez donc 
