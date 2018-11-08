@@ -230,15 +230,17 @@ Pour utiliser cette règle, trois choses sont nécessaires :
 Puis exécutez PMD à nouveau, et constatez et corrigez la nouvelle erreur que cette règle doit trouver.
 
 
-## Ecrivez les trois règles suivantes:
+## Écriture de nouvelles règles
 
-* Une violation est levée dès que deux boucles `for` sont imbriquées.
-* Une violation est levée pour chaque `while(true)` ou `while(false)`.
-* Raffinez la règle précédente en prenant en compte les possibilités d’échappement `break` ou `return`) dans la boucle `while`.
+Écrivez les trois règles suivantes :
+
+1. Une violation est levée dès que deux boucles `for` sont imbriquées.
+2. Une violation est levée pour chaque `while(true)` ou `while(false)`.
+3. Raffinez la règle précédente en prenant en compte les possibilités d’échappement `break` ou `return`) dans la boucle `while`.
 
 Notez que :
 - Il faudra prendre soin à écrire ces règles au sein du projet `custompmdrules`, et à 
-les ajouter au fichier xml contenant le `ruleSet`.
+les ajouter au fichier xml définissant le `ruleSet`.
 - Le projet fourni ne contient pas de code qui enfreint ces règles, vous devrez donc 
   ajouter du code artificiel au sein du projet `statique` pour tester vos règles. 
 - N'hésitez pas à vous aider de la documentation officielle PMD, bien qu'elle ne fasse 
