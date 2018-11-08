@@ -11,6 +11,10 @@ Pour cela, utilisez Maven, à partir de la ligne de commandes:
 
 Le projet doit compiler correctement et réussira tous les tests unitaires.
 
+*Note : si vous souhaitez exécuter les tests du projet au sein d'Eclipse,
+pensez à configurer votre Run Configuration en mode JUnit 4 et non en mode JUnit 5, car les tests de ce projet
+sont écrits en JUnit 4.*
+
 # Premiers pas avec PMD
 
 Pour commencer l’analyse du code source, vous allez utiliser l’outil PMD directement à partir de Maven, qui se
