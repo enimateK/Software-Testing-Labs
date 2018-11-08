@@ -7,7 +7,6 @@ import net.sourceforge.pmd.lang.java.rule.AbstractJavaRule;
 public class WhileLoopsMustUseBracesRule extends AbstractJavaRule {
 
     public Object visit(ASTWhileStatement node, Object data) {
-    	  addViolation(data, node);
         Node firstStmt;
         firstStmt = (Node)node.jjtGetChild(1);
         if (!hasBlockAsFirstChild(firstStmt)) {
