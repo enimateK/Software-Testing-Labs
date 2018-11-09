@@ -1,25 +1,13 @@
 package fr.univnantes.cta;
 
-import static org.junit.Assert.*;
+import fr.univnantes.cta.impl.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-import fr.univnantes.cta.Angle;
-import fr.univnantes.cta.CompassDirection;
-import fr.univnantes.cta.Position;
-import fr.univnantes.cta.TakenAirway;
-import fr.univnantes.cta.VOR;
-import fr.univnantes.cta.impl.AirwayImpl;
-import fr.univnantes.cta.impl.FlightPlanImpl;
-import fr.univnantes.cta.impl.LatitudeImpl;
-import fr.univnantes.cta.impl.LongitudeImpl;
-import fr.univnantes.cta.impl.PositionImpl;
-import fr.univnantes.cta.impl.TakenAirwayImpl;
-import fr.univnantes.cta.impl.VORImpl;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 public class TestFlightPlan {
@@ -28,12 +16,12 @@ public class TestFlightPlan {
 	private TakenAirwayImpl secondTakenAirway;
 	private VORImpl VORStop = new VORImpl("stop", new PositionImpl(new LatitudeImpl(40, 30, 30, CompassDirection.NORTH), new LongitudeImpl(40,30,30, CompassDirection.WEST)));
 	
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 		this.flightPlanImpl = new FlightPlanImpl();
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() throws Exception {
 	}
 
@@ -57,24 +45,22 @@ public class TestFlightPlan {
 		VORImpl VORC = new VORImpl("c", new PositionImpl(new LatitudeImpl(50, 30, 30, CompassDirection.NORTH), new LongitudeImpl(50,30,30, CompassDirection.WEST)));
 		AirwayImpl airway2 = new AirwayImpl(VORStop, VORC);
 		TakenAirwayImpl secondTakenAirway = new TakenAirwayImpl(airway2, 30, CompassDirection.NORTH);
-		try {
-			this.flightPlanImpl.addAirway(secondTakenAirway);
-		}catch(Exception e) {
-			fail("Exception inattendue");
-		}
+		this.flightPlanImpl.addAirway(secondTakenAirway);
 		assert flightPlanImpl.getTakenAirways().get(1).equals(secondTakenAirway);
 	}
-	
-	@Test(expected=IllegalArgumentException.class)
-	public void testAddAirway2NotCorrect() {
-		build1TakenAirwayPlan();
-		
-		VORImpl VORC = new VORImpl("c", new PositionStubForVOR());
-		VORImpl VORD = new VORImpl("d", new PositionStubForVOR());
-		AirwayImpl airway2 = new AirwayImpl(VORC, VORD);
-		TakenAirwayImpl secondTakenAirway = new TakenAirwayImpl(airway2, 30, CompassDirection.NORTH);
-		this.flightPlanImpl.addAirway(secondTakenAirway);
-	}
+
+    @Test
+    public void testAddAirway2NotCorrect() {
+        build1TakenAirwayPlan();
+
+        VORImpl VORC = new VORImpl("c", new PositionStubForVOR());
+        VORImpl VORD = new VORImpl("d", new PositionStubForVOR());
+        AirwayImpl airway2 = new AirwayImpl(VORC, VORD);
+        TakenAirwayImpl secondTakenAirway = new TakenAirwayImpl(airway2, 30, CompassDirection.NORTH);
+
+        assertThrows(IllegalArgumentException.class, () ->
+                this.flightPlanImpl.addAirway(secondTakenAirway));
+    }
 	
 	@Test
 	public void testDistanceNotNegative() {
