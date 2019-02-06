@@ -14,7 +14,7 @@ public abstract class Range {
      * Otherwise, it is a SingleValue.
      *
      * @param str
-     * @return
+     * @return Interval
      */
     public static Range fromString(String str) {
         if (str.equals("*")) {

@@ -7,6 +7,10 @@ public class SingleValue extends Range {
 
     private final int value;
 
+    public int getValue() {
+        return value;
+    }
+
     protected SingleValue(int i) {
         assert i >= 0;
 

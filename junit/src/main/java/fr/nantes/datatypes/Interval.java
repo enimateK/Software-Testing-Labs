@@ -8,6 +8,14 @@ public class Interval extends Range {
     private int from;
     private int to;
 
+    public int getFrom() {
+        return from;
+    }
+
+    public int getTo() {
+        return to;
+    }
+
     /**
      * Creates an interval between two values.
      *
